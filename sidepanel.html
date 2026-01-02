@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kairos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <h1>Hi <span>there!</span></h1>
+        <p>Ready to focus?</p>
+      </div>
+      <button class="theme-toggle" id="themeToggle">
+        <span class="theme-icon-sun">☀️</span>
+        <span class="theme-icon-moon">🌙</span>
+      </button>
+    </header>
+
+    <!-- Bento Grid -->
+    <div class="bento-grid">
+
+      <!-- Card 1: Stats (moved up) -->
+      <div class="bento-card card-yellow">
+        <div class="card-header-row">
+          <span class="card-label">Distractions</span>
+          <span class="circle-btn">🚫</span>
+        </div>
+        <div class="big-stat">
+          <span id="blockedCount">0</span>
+          <small>blocked</small>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- Card 2: API Key (moved up) -->
+      <div class="bento-card card-blue" id="settingsToggle">
+        <div class="card-header-row">
+          <span class="card-label">Settings</span>
+          <span class="circle-btn">⚙️</span>
+        </div>
+        <h3>Gemini API</h3>
+        <p class="status-text" id="apiStatus">Configure key →</p>
+      </div>
+
+      <!-- Card 3: Session Setup -->
+      <div class="bento-card card-teal" id="sessionSetup">
+        <div class="card-header-row">
+          <span class="card-icon">🎯</span>
+          <span class="pill">Setup</span>
+        </div>
+        <h2>Start a new<br>focus session</h2>
+
+        <div class="inputs-wrapper">
+          <input type="text" id="goalInput" placeholder="What's your goal?">
+          <textarea id="allowedSitesInput" placeholder="Allowed sites (github.com...)"></textarea>
+
+          <!-- Strict Mode Toggle -->
+          <label class="toggle-row">
+            <div class="toggle-info">
+              <span class="toggle-label">🔒 Strict Mode</span>
+              <span class="toggle-desc">Evaluates even allowed sites. Platforms like YouTube, Docs, or ChatGPT can still
+                lead you off-task.</span>
+            </div>
+            <input type="checkbox" id="strictModeToggle" class="toggle-checkbox">
+            <span class="toggle-switch"></span>
+          </label>
+        </div>
+
+        <button class="btn-black" id="startSessionBtn">
+          Start Focusing →
+        </button>
+      </div>
+
+      <!-- Active Session View (Replaces Card 3 when active) -->
+      <div class="bento-card card-teal session-card-active" id="sessionActive" style="display: none;">
+        <div class="card-header-row">
+          <span class="card-icon">⚡</span>
+          <span class="pill status-active">Active</span>
+        </div>
+        <h2 id="displayGoal">Focusing...</h2>
+
+        <div class="timer-display" id="sessionTime">0m</div>
+
+        <!-- Activity Logs Section -->
+        <div class="activity-section">
+          <p class="activity-note">📌 Your tabs will be restored after the session ends. Let's get some work done!</p>
+          <div class="activity-logs" id="activityLogs">
+            <!-- Logs will be added here dynamically -->
+          </div>
+        </div>
+
+        <button class="btn-black icon-only" id="endSessionBtn">
+          ⏹️
+        </button>
+      </div>
+
+      <!-- Settings Overlay (Hidden by default) -->
+      <div class="settings-overlay" id="settingsContent" style="display: none;">
+        <div class="overlay-card">
+          <button class="modal-close-btn" id="settingsCloseBtn">✕</button>
+          <h3>API Configuration</h3>
+          <input type="password" id="apiKeyInput" placeholder="Enter Gemini API key...">
+          <button class="btn-primary" id="saveApiKeyBtn">Save Key</button>
+          <p class="help-text">Get key from <a href="https://aistudio.google.com/apikey" target="_blank">Google AI
+              Studio</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="ai-service.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+
+</html>

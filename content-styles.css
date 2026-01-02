@@ -1,0 +1,166 @@
+/* Kairos Blocking Overlay Styles */
+
+#kairos-block-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(37, 99, 235, 0.95);
+    z-index: 2147483647;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Close Button */
+.kairos-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kairos-close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: white;
+    transform: scale(1.1);
+}
+
+.kairos-block-content {
+    text-align: center;
+    color: white;
+    max-width: 500px;
+    padding: 40px;
+}
+
+.kairos-logo {
+    font-size: 64px;
+    margin-bottom: 16px;
+}
+
+.kairos-block-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+}
+
+.kairos-message {
+    font-size: 20px;
+    opacity: 0.9;
+    margin: 0 0 8px 0;
+}
+
+.kairos-reason {
+    font-size: 14px;
+    opacity: 0.7;
+    margin: 0 0 32px 0;
+    font-style: italic;
+}
+
+.kairos-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.kairos-btn {
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.kairos-btn:hover {
+    transform: translateY(-2px);
+}
+
+.kairos-btn-primary {
+    background: white;
+    color: #2563eb;
+}
+
+.kairos-btn-primary:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.kairos-btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.kairos-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.kairos-btn-small {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+/* Justification Form */
+.kairos-justify-form {
+    margin-top: 24px;
+}
+
+.kairos-justify-form textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 16px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    resize: vertical;
+    margin-bottom: 16px;
+}
+
+.kairos-justify-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.kairos-justify-form textarea:focus {
+    outline: none;
+    border-color: white;
+}
+
+.kairos-justify-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* Justification Result */
+.kairos-justify-result {
+    margin-top: 24px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+}
+
+.kairos-rejected {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.kairos-hint {
+    font-size: 14px;
+    opacity: 0.8;
+}
